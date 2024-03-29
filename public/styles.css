@@ -1,0 +1,111 @@
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&display=swap');
+    * {
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+    
+    head {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+        font-family: 'Noto Serif', serif;
+        max-width: 1200px;
+        background-color: rgb(153, 130, 116);
+        /* Background color for the body */
+    }
+    
+    body {
+        max-width: 2000px;
+        margin: auto;
+        padding: 0 20px;
+        font-family: 'Noto Serif', serif;
+        max-width: 2000px;
+        background-color: white;
+        /* Background color for the body */
+    }
+    
+    p,
+    h1,
+    h2,
+    h3,
+    a,
+    ul {
+        margin: auto;
+        padding: 0;
+        text-decoration: none;
+        color: rgb(68, 52, 37);
+    }
+    /* nav & footer styles */
+    
+    .navbar-container {
+        background-color: rgb(153, 130, 116);
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        /* Fixed height for the navbar */
+    }
+    
+    .custom-bg {
+        background-color: rgb(153, 130, 116);
+        /* Replace with your desired color code */
+    }
+    
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 60px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #504a3f;
+        text-transform: uppercase;
+    }
+    
+    nav ul {
+        display: flex;
+    }
+    
+    nav li {
+        list-style-type: none;
+        margin-left: 20px;
+    }
+    
+    nav h1 {
+        font-size: 3em;
+    }
+    
+    nav p,
+    nav a {
+        color: #4f3e3e;
+        font-weight: 300;
+        font-weight: bold;
+    }
+    
+    nav a:hover {
+        color: rgb(14, 11, 6);
+        text-decoration-line: underline;
+    }
+    
+    footer {
+        color: #4f3e3e;
+        text-align: center;
+        margin: 80px auto 20px;
+    }
+    
+    h2 {
+        margin-bottom: 40px;
+    }
+    
+    h3 {
+        text-transform: capitalize;
+        margin-bottom: 8px;
+    }
+    
+    .content {
+        margin-left: 100px;
+    }
+    /* .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 100%;
+} */

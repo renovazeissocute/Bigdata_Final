@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./partials/head.ejs") %>
+
+    <body>
+        <%- include("./partials/nav.ejs") %>
+
+            <div class="detailscontent">
+
+                <img src="<%= coffee.imgUrl %>" alt="Menu Image" style="width: 400px; height: 350px; display: block; float: left; margin-left: 300px;">
+
+
+                <h2 style="margin-left: 30px;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu Name:
+                    <%= coffee.coffeeName %>
+                        <p>
+                            <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Menu Details:
+                            <%= coffee.details %>
+                        </p>
+                        <br>
+                        <p>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price:
+                            <%= coffee.price %> Baht
+                        </p>
+
+                </h2>
+                <!-- <div class="content" style="text-align: left;">
+                    <p>
+                        Menu Details:
+                        <%= coffee.details %>
+                    </p>
+                </div> -->
+
+                <!DOCTYPE html>
+                <html lang="en">
+
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Edit and Delete Buttons</title>
+                    <style>
+                        .button {
+                            position: relative;
+                            /* Set the container to relative positioning */
+                            left: 90px;
+                            /* Adjust the left position as needed */
+                            top: 20px;
+                            /* Adjust the top position as needed */
+                        }
+                        
+                        .edit-btn,
+                        .delete-btn {
+                            margin-right: 10px;
+                            /* Adjust as needed */
+                        }
+                        
+                        .edit-btn {
+                            background-color: #007bff;
+                            /* Blue color for Edit button */
+                            color: #fff;
+                            /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background-color 0.3s ease;
+                        }
+                        
+                        .edit-btn:hover {
+                            background-color: #0056b3;
+                            /* Darker blue on hover */
+                        }
+                        
+                        .delete-btn {
+                            background-color: #ce4b2a;
+                            /* Green color for Delete button */
+                            color: #fff;
+                            /* Text color */
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            transition: background-color 0.3s ease;
+                        }
+                        
+                        .delete-btn:hover {
+                            background-color: #883621;
+                            /* Darker green on hover */
+                        }
+                    </style>
+                </head>
+
+                <body>
+                    <div class="button">
+                        <button type="button" class="edit-btn"><a class="edit" href="/coffees/update/<%= coffee._id %>">Edit</a></button>
+                        <button type="button" class="delete-btn"><a class="delete" data-doc="<%= coffee._id %>">Delete</a></button>
+                    </div>
+                </body>
+
+                </html>
+
+</html>
+
+<%- include("./partials/footer.ejs") %>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const trashcan = document.querySelector('a.delete');
+            trashcan.addEventListener('click', (e) => {
+                e.preventDefault();
+                const docId = trashcan.dataset.doc;
+                const endpoint = `/coffees/${docId}`;
+
+                fetch(endpoint, {
+                        method: 'DELETE',
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.redirect) {
+                            window.location.href = data.redirect;
+                        } else {
+                            console.log('Delete operation successful but no redirect provided.');
+                        }
+                    })
+                    .catch(err => console.error('Error:', err));
+            });
+        });
+    </script>
+    </body>
+
+    </html>

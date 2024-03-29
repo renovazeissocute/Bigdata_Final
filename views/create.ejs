@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Coffee</title>
+    <!-- Your CSS and other head content here -->
+</head>
+
+<body>
+    <%- include("./partials/head.ejs") %>
+</body>
+
+<body>
+    <%- include("./partials/nav.ejs") %>
+
+        <div class="create-blog content" style="max-width: 400px; margin: 0 auto;">
+            <form action="/coffees" method="POST" style="width: 100%;">
+                <label for="coffeeName" style="font-size: 16px;">Menu Name:</label>
+                <input type="text" id="coffeeName" name="coffeeName" style="width: calc(100% - 20px); padding: 8px; font-size: 14px;" required><br><br>
+
+                <label for="price" style="font-size: 16px;">Price:</label>
+                <input type="text" id="price" name="price" style="width: calc(100% - 20px); padding: 8px; font-size: 14px;" required><br><br>
+
+                <label for="details" style="font-size: 16px;">Detail:</label>
+                <textarea id="details" name="details" style="width: calc(100% - 20px); padding: 8px; font-size: 14px;" rows="4" required></textarea><br><br>
+
+                <label for="imgUrl" style="font-size: 16px;">Image URL:</label>
+                <input type="text" id="imgUrl" name="imgUrl" style="width: calc(100% - 20px); padding: 8px; font-size: 14px;" required><br><br>
+                <button style="width: 100%; padding: 10px; font-size: 16px; background-color: #544035; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Submit
+                            </button>
+            </form>
+        </div>
+        <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>
